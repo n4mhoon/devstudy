@@ -1,3 +1,3 @@
 # Test git of n4mhoon
 hello. my name is namhoon.
-![hello](/assets/hello.png)
+![hello](/ass1/assets/hello.png)
