@@ -1,6 +1,6 @@
-# Test git of n4mhoon
-hello. my name is namhoon.
+# Test Repository of n4mhoon
+Hello. my name is namhoon.
 
-this is repository for dev study with Jihoon teacher.
+this repository is for Dev Study with JihoonT.
 
 ![hello](/ass1/assets/hello.png)
