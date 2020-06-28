@@ -24,9 +24,15 @@
         const savedText = document.getElementById('savedtext');
 
         savebtn.addEventListener('click', function() {
-           inputElement.innerText
-        });
+            if (inputElement.value.length == 0) {
+                alert('Fill the Text box');
+            }
 
+            else {
+                savedText.innerText = inputElement.value;
+                inputElement.value = '';
+            }
+        });
 
     </script>
 </body>
