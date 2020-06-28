@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메모장</title>
+</head>
+<body>
+    <div>
+        <h1>메모장</h1>
+    </div>
+
+    <div>
+        <input id="inputtext" type="text"> <button id="savebutton">저장</button>
+    </div>
+
+    <div>
+        <h3 id="savedtext">저장된 텍스트</h3>
+    </div>
+
+    <script>
+        const inputElement = document.getElementById('inputtext');
+        const savebtn = document.getElementById('savebutton');
+        const savedText = document.getElementById('savedtext');
+
+        savebtn.addEventListener('click', function() {
+           inputElement.innerText
+        });
+
+
+    </script>
+</body>
+</html>
