@@ -4,26 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메모장</title>
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+   
     <style>
+        body {
+            font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+            font-size: 100%;
+        }
+        #header{
+            font-size: 24px;
+            font-weight: 700;
+        }
+        #savedtext{
+            font-size: 16px;
+            font-weight: 500;
+        }
         #inputtext{       
             background: #FFFFFF;
             border: 1px solid #EDF0F7;
             box-sizing: border-box;
+            width: 800px;
             border-radius: 4px;
             height: 64px;
             padding-left: 16px;
             padding-right: 16px;
             }
+        .button{
+            background: #6361E3;
+            color:#FFFFFF;
+            border: none;
+            border-radius: 4px;
+            margin-left: 8px;
+            height: 64px;
+            width: 64px;
+            cursor: pointer;
+            text-decoration: none;
+            -webkit-transition-duration: 0.2s; /* Safari */
+            transition-duration: 0.2s;
+        }
+        .button:hover {
+            background: #4542C8;
+        }
+        .button:active {
+            background: #2D2A8E;
+        }
     </style>
 </head>
 <body>
     <div>
-        <h1>메모장</h1>
+        <h1 id="header">메모장</h1>
     </div>
 
     <div>
-        <input id="inputtext" type="text" placeholder="Fill this text box"> <button id="savebutton">저장</button>
+        <input id="inputtext" type="text" placeholder="Fill this text box"> <button id="savebutton" class="button">저장</button>
     </div>
 
     <div>
@@ -34,19 +68,28 @@
         const inputElement = document.getElementById('inputtext');
         const savebtn = document.getElementById('savebutton');
         const savedText = document.getElementById('savedtext');
-
-        savebtn.addEventListener('click', function() {
-            // savebtn.onclick() = () => {hello}
-
+      
+        function save() {
             if (inputElement.value.length == 0) {
-                alert('Fill the Text box');
+               alert('Fill the Text box');
             }
 
             else {
                 savedText.innerText = inputElement.value;
                 inputElement.value = '';
             }
+        }
+
+        savebtn.addEventListener('click', function(){
+            save();
         });
+
+        inputElement.addEventListener('keypress', function(){
+            if(event.keyCode == 13){
+                save();
+            }
+        });
+
 
     </script>
 </body>
