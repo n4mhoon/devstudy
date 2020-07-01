@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메모장</title>
+
+    <style>
+        #inputtext{       
+            background: #FFFFFF;
+            border: 1px solid #EDF0F7;
+            box-sizing: border-box;
+            border-radius: 4px;
+            height: 64px;
+            padding-left: 16px;
+            padding-right: 16px;
+            }
+    </style>
 </head>
 <body>
     <div>
@@ -24,6 +36,8 @@
         const savedText = document.getElementById('savedtext');
 
         savebtn.addEventListener('click', function() {
+            // savebtn.onclick() = () => {hello}
+
             if (inputElement.value.length == 0) {
                 alert('Fill the Text box');
             }
