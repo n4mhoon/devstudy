@@ -40,7 +40,7 @@
             height: 64px;
             padding-left: 16px;
             padding-right: 16px;
-            }
+        }
         .button{
             background: #6361E3;
             color:#FFFFFF;
@@ -60,6 +60,18 @@
         .button:active {
             background: #2D2A8E;
         }
+        .flex-container{
+            display: flex;
+            flex-direction: row;
+            align: center;
+            margin: 8px;
+            padding: 16px;
+            border: none;
+            background: none;
+        }
+        .flex-item{
+            display: flex;
+        }
     </style>
 </head>
 <body>
@@ -67,13 +79,29 @@
         <h1 id="header">메모장</h1>
     </div>
 
-    <div>
-        <input id="inputtext" type="text" placeholder="Fill this text box"> <button id="savebutton" class="button">저장</button>
+    <div class="parent">
+        
+        <div class="child">
+            <div class="flex-container">
+                <div class="flex-item">
+                    <input id="inputtext" type="text" placeholder="Fill this text box">
+                </div>
+        
+                <div class="flex-item" >
+                    <button id="savebutton" class="button">저장</button>
+                </div>
+        </div>
+
+        <div class="child">
+            <div>
+                <h3 id="savedtext">저장된 텍스트</h3>
+            </div>
+        </div>
+    
     </div>
 
-    <div>
-        <h3 id="savedtext">저장된 텍스트</h3>
-    </div>
+
+
 
     <script>
         const inputElement = document.getElementById('inputtext');
