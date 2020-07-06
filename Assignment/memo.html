@@ -9,16 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
    
     <style>
-        body {
+        html, body {
             font-family: 'Roboto', 'Noto Sans KR', sans-serif;
-            font-size: 100%;
+            width: 100%;
+            height: 100%;
             margin: 0;
             padding: 0;
         }
         #header{
             font-size: 24px;
             font-weight: 700;
-            padding-left: 16px;
             background: #6361E3;
             margin: 0;
             height: 80px;
@@ -36,11 +36,12 @@
             background: #FFFFFF;
             border: 1px solid #EDF0F7;
             box-sizing: border-box;
-            width: 800px;
+            width: 100%;
             border-radius: 4px;
             height: 64px;
             padding-left: 16px;
             padding-right: 16px;
+            flex: 0 0 auto;
         }
         .button{
             background: #6361E3;
@@ -50,7 +51,7 @@
             border-radius: 4px;
             margin-left: 8px;
             height: 64px;
-            width: 64px;
+            width: 120px;
             cursor: pointer;
             text-decoration: none;
             transition-duration: 0.2s;
@@ -62,14 +63,15 @@
         .button:active {
             background: #2D2A8E;
         }
-        .flex-container{
+        .container{
             display: flex;
-            flex-direction: row;
-            border: none;
-            background: none;
+            flex-wrap: wrap;
+            margin-top: 16px;
+            margin-left: 8px;
+            margin-right: 8px;
         }
-        .flex-item{
-            display: flex;
+        .input {
+            flex: 1 0 auto;
         }
     </style>
 </head>
@@ -80,24 +82,20 @@
         <h1 id="header">메모장</h1>
     </div>
 
-    <div class="parent">
-
-        <div class="child">
-            <div class="flex-container">
-                <div class="flex-item">
-                    <input id="inputtext" type="text" placeholder="Fill this text box">
-                </div>
-        
-                <div class="flex-item" >
-                    <button id="savebutton" class="button">저장</button>
-                </div>
+    <div class="container">
+        <div class="input">
+            <input id="inputtext" type="text" placeholder="Fill this text box">
         </div>
+        
+        <div class="buttonwrap">
+            <button id="savebutton" class="button">저장</button>
+        </div>
+    </div>
 
-        <div class="child">
+        <div class="container">
             <div>
                 <h3 id="savedtext">저장된 텍스트</h3>
             </div>
-        </div>
     
     </div>
 

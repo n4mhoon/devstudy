@@ -6,18 +6,71 @@
     <title>style study</title>
 
     <style>
-        html, body {
+html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+       /*     
+        .container {
+            display: flex;
+            height: 500px;
+            width: 500px;
+            background: #ffff00;
+        }
+        .box {
+            background: aqua;
+            height: 100px;
+            width: 100px;
+        }
+        */
+
+        nav ul {
+          display: flex;
+          justify-content: space-between;
+        }
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box div {
+            width: 500px;
+            height: 500px;
+            background-color: #ff0000;
+
+        }
+      
+    
+
     </style>
     
 </head>
 
 
 <body>
+  <!-- <div id=container>
+        <div id=box>
+            hello1
+        </div>
+        <div id=box>
+            hello2
+        </div>
+    </div>  --> 
+    <nav>
+        <ul>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+            <li><a href="#">Page 3 is longer</a></li>
+            <li><a href="#">Page 4</a></li>
+        </ul>
+    </nav>
     
+    <div class="box">
+        <div></div>
+      </div>
+
 </body>
 </html>
