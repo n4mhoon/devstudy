@@ -41,7 +41,7 @@
             height: 64px;
             padding-left: 16px;
             padding-right: 16px;
-            flex: 0 0 auto;
+            /* flex: 0 0 auto; */
         }
         .button{
             background: #6361E3;
@@ -66,12 +66,15 @@
         .container{
             display: flex;
             flex-wrap: wrap;
-            margin-top: 16px;
+            justify-content: stretch;
+            box-sizing: border-box;
+            padding: 16px 8px 0px 8px;
+            /* margin-top: 16px;
             margin-left: 8px;
-            margin-right: 8px;
+            margin-right: 8px; */
         }
         .input {
-            flex: 1 0 auto;
+            flex: 1;
         }
     </style>
 </head>
