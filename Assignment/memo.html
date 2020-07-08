@@ -15,33 +15,48 @@
             height: 100%;
             margin: 0;
             padding: 0;
+            background-color: #f5f7fb;
         }
         #header{
             font-size: 24px;
             font-weight: 700;
+            color: #ffffff;
             background: #6361E3;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+            box-sizing: border-box;
             margin: 0;
             height: 80px;
-            color: #ffffff;
-            text-align: center;
+            border-radius: 0px 0px 8px 8px;
             display: flex;
+            text-align: center;
             justify-content: center;
             align-items: center;
             }
         #savedtext{
             font-size: 16px;
             font-weight: 500;
+            padding: 0px 8px;
         }
-        #inputtext{       
+        #inputtext{   
+            outline: none;    
             background: #FFFFFF;
             border: 1px solid #EDF0F7;
             box-sizing: border-box;
             width: 100%;
             border-radius: 4px;
             height: 64px;
-            padding-left: 16px;
-            padding-right: 16px;
-            /* flex: 0 0 auto; */
+            padding: 0px 16px;
+            transition-duration: 0.2s;
+            -webkit-transition-duration: 0.2s; /* Safari */
+        }
+        #inputtext:hover{
+            border: 1px solid #6361E3;
+        }
+        /* #inputtext:active{
+            border: 1px solid #6361E3;
+        } */
+        #inputtext:focus{
+            border: 1px solid #6361E3;
         }
         .button{
             background: #6361E3;
@@ -53,7 +68,9 @@
             height: 64px;
             width: 120px;
             cursor: pointer;
-            text-decoration: none;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 900;
             transition-duration: 0.2s;
             -webkit-transition-duration: 0.2s; /* Safari */
         }
@@ -69,18 +86,31 @@
             justify-content: stretch;
             box-sizing: border-box;
             padding: 16px 8px 0px 8px;
-            /* margin-top: 16px;
-            margin-left: 8px;
-            margin-right: 8px; */
+        }
+        .container2{
+            min-height: 400px;
+            flex-wrap: wrap;
+            margin: 16px 8px;
+            padding: 4px 0px;
+            background: #ffffff;
+            border-width: 4px 1px 1px;
+            border-style: solid;
+            border-color: #EDF0F7;
+            transition-duration: 0.2s;
+            -webkit-transition-duration: 0.2s; /* Safari */
         }
         .input {
             flex: 1;
+        }
+        .container2:hover {
+            border-top: 4px solid #6361E3;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 
 <body>
-    
+
     <div>
         <h1 id="header">메모장</h1>
     </div>
@@ -89,30 +119,27 @@
         <div class="input">
             <input id="inputtext" type="text" placeholder="Fill this text box">
         </div>
-        
         <div class="buttonwrap">
             <button id="savebutton" class="button">저장</button>
         </div>
     </div>
 
-        <div class="container">
-            <div>
-                <h3 id="savedtext">저장된 텍스트</h3>
-            </div>
-    
+    <div class="container2">
+        <div>
+            <h3 id="savedtext">저장된 텍스트</h3>
+        </div>
     </div>
 
 
-
-
     <script>
+
         const inputElement = document.getElementById('inputtext');
         const savebtn = document.getElementById('savebutton');
         const savedText = document.getElementById('savedtext');
       
         function save() {
             if (inputElement.value.length == 0) {
-               alert('Fill the Text box');
+               alert('Please fill the Textbox!');
             }
 
             else {
@@ -121,10 +148,10 @@
             }
         }
 
-        savebtn.addEventListener('click', function(){
-            save();
-        });
-        // savebtn.addEventListener('click', save);
+        savebtn.addEventListener('click', save);
+        // savebtn.addEventListener('click', function(){
+        //     save();
+        // });
 
         inputElement.addEventListener('keypress', function(){
             if(event.keyCode == 13){
@@ -132,7 +159,8 @@
             }
         });
 
-
     </script>
+
 </body>
+
 </html>
