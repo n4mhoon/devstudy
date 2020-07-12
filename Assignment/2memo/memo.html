@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메모장</title>
+    <!-- <link rel="shortcut icon" href="logo.ico" /> -->
+    <link rel="stylesheet" href="memostyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div>
+      <h1 id="header">메모장</h1>
+    </div>
+
+    <div class="container">
+      <div class="input">
+        <input id="inputtext" type="text" placeholder="Fill this text box" />
+      </div>
+      <div class="buttonwrap">
+        <button id="savebutton" class="button">저장</button>
+      </div>
+    </div>
+
+    <div class="container-2">
+      <div class="line"></div>
+      <div id="textlist">
+        <!-- <h3 id="savedtext">insert here</h3> -->
+      </div>
+    </div>
+
+    <script>
+      const tlist = ["메모를 입력하세요."];
+      const inputElement = document.getElementById("inputtext");
+      const savebtn = document.getElementById("savebutton");
+      const savedText = document.getElementById("savedtext");
+
+
+      //save 버튼 로직
+      function save() {
+        if (inputElement.value.length == 0) {
+          alert("Please fill the Textbox!");
+        } else {
+          tlist.push(inputElement.value)
+          inputElement.value = "";
+          //텍스트 넣기
+          document.getElementById('textlist').innerHTML +=
+          '<div id="listed_'+[tlist.length-1]+'"'+ 'class="textlistatt">'+
+          '<div id="savedtext">'+ tlist[tlist.length-1] +'</div>'
+          +'<button id="del_'+[tlist.length-1]+'"'+' class="delbutton"><img src="assets/trash.svg" alt=""></button>'
+          +'</div>';
+          const [del_(tlist.length-1)] = document.getElementById("del"+tlist.length-1);
+        }
+
+          //array 확인용
+          tlist.forEach(function (item, index, array) {
+          console.log(item, index)
+        })
+      }
+
+
+      // save 버튼 작동
+      savebtn.addEventListener("click", save);
+      inputElement.addEventListener("keypress", function () {
+        if (event.keyCode == 13) {
+          save();
+        }
+      });
+
+      del_[tlist.length-1].addEventListener("click", function () {
+        listed_[tlist.length-1].remove();
+        tlist.splice()
+        })
+
+
+    </script>
+  </body>
+</html>
