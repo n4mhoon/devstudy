@@ -31,7 +31,8 @@
     </div>
 
     <script>
-      const tlist = ["메모를 입력하세요."];
+      const tlist = ["1"];
+      let tlistnum = 0;
       const inputElement = document.getElementById("inputtext");
       const savebtn = document.getElementById("savebutton");
       const savedText = document.getElementById("savedtext");
@@ -42,15 +43,22 @@
         if (inputElement.value.length == 0) {
           alert("Please fill the Textbox!");
         } else {
+          tlistnum++
           tlist.push(inputElement.value)
           inputElement.value = "";
+
           //텍스트 넣기
           document.getElementById('textlist').innerHTML +=
-          '<div id="listed_'+[tlist.length-1]+'"'+ 'class="textlistatt">'+
+          '<div id="listed_'+[tlistnum]+'"'+ 'class="textlistatt">'+
           '<div id="savedtext">'+ tlist[tlist.length-1] +'</div>'
-          +'<button id="del_'+[tlist.length-1]+'"'+' class="delbutton"><img src="assets/trash.svg" alt=""></button>'
+          +'<button id="del_'+[tlistnum]+'"'+' class="delbutton"><img src="assets/trash.svg" alt=""></button>'
           +'</div>';
-          const [del_(tlist.length-1)] = document.getElementById("del"+tlist.length-1);
+
+          let tlistnumbtn = document.getElementById("del_"+tlistnum);
+          let tlistdel = document.getElementById("listed_"+tlistnum);
+          tlistnumbtn.addEventListener("click", function () {
+          tlistdel.remove();
+          tlist.splice(1, tlist.length-1) });
         }
 
           //array 확인용
@@ -68,10 +76,11 @@
         }
       });
 
-      del_[tlist.length-1].addEventListener("click", function () {
-        listed_[tlist.length-1].remove();
-        tlist.splice()
-        })
+      // delete 버튼 작동
+      // delete_tlistnum.addEventListener("click", function () {
+      //   listed_[tlist.length-1].remove();
+      //   tlist.splice()
+      //   })
 
 
     </script>
