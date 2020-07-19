@@ -28,6 +28,32 @@
       flex-wrap: wrap;
       flex-direction: row;
     }
+    .editlistatt {
+      display: flex;
+      padding : 8px;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+    
+    .editinputatt {
+      display: flex;
+      outline: none;
+      background: transparent;
+      border: 1px solid #edf0f7;
+      box-sizing: border-box;
+      border-radius: 4px;
+      height: 24px;
+      padding: 0px 8px;
+      flex-grow: 1;
+      transition: 0.2s;
+    }
+    .editinputatt:hover {
+      border: 1px solid #6361e3;
+    }
+    .editinputatt:focus {
+      border: 1px solid #6361e3;
+    }
+
     #savedtext {
       font-size: 16px;
       font-weight: 500;
@@ -92,6 +118,44 @@
     }
     .delbutton:active {
       background-color: rgba(255, 76, 76, 0.30);
+    }
+    .editbutton {
+      background: transparent;
+      color: #ffffff;
+      border: none;
+      outline: none;
+      border-radius: 4px;
+      height: 24px;
+      width: 24px;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .editbutton:hover {
+      background: rgba(99, 97, 227, 0.15);
+    }
+    .editbutton:active {
+      background-color: rgba(99, 97, 227, 0.30);
+    }
+    .ebutton {
+      background: transparent;
+      color: #ffffff;
+      border: none;
+      outline: none;
+      border-radius: 4px;
+      height: 24px;
+      width: 24px;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .ebutton:hover {
+      background: rgba(99, 97, 227, 0.15);
+    }
+    .ebutton:active {
+      background-color: rgba(99, 97, 227, 0.30);
     }
     .container {
       display: flex;

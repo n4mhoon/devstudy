@@ -67,91 +67,29 @@
           //텍스트 넣기
           document.getElementById("textlist").innerHTML +=
             `<div id="listed_` +
-            (tlist.length) +
+            (tlist.length - 1) +
             `"` +
             `class="textlistatt">` +
             `<div id="savedtext">` +
             tlist[tlist.length - 1] +
             `</div>` +
-            `<button onclick="editItem(${tlist.length})"` +
-            ` class="editbutton"><img src="assets/edit.svg" alt=""></button>` +
-            `<button onclick="removeItem(${tlist.length})"` +
+            `<button onclick="removeItem(${tlist.length - 1})"` +
             ` class="delbutton"><img src="assets/trash.svg" alt=""></button>` +
             `</div>`;
         }
-      }
 
+        //array 확인용
+        tlist.forEach(function (item, index, array) {
+          console.log(item, index);
+        });
+      }
       //delete 버튼 작동
       function removeItem(num) {
         let ri = document.getElementById("listed_" + num);
         ri.remove();
-          tlist.splice(0, num);
-        
+        tlist.splice(0, num);
+        console.log(num);
       }
-
-      //edit 버튼 작동
-      function editItem(num) {
-        let ei = document.getElementById("savedtext" + num);
-        ei.remove();
-        document.getElementById("textlist").innerHTML +=
-            `<div id="editlist_` +
-            num +
-            `" class="editlistatt" />` +
-            `<input id="editedtext_` +
-            num +
-            `"` +
-            `class="editinputatt"` +
-            `value ="` +
-            tlist[num] +
-            `" />` +
-            `<button onclick="cancel(${num})"` +
-            ` class="ebutton"><img src="assets/exit.svg" alt=""></button>` +
-            `<button onclick="esave(${num})"` +
-            ` class="ebutton"><img src="assets/check.svg" alt=""></button>` +
-            `</div>`;
-      }
-
-      //edit cancel
-      function cancel(num) {
-        let rei = document.getElementById("editlist_" + num);
-        rei.remove();
-
-        document.getElementById("textlist").innerHTML +=
-            `<div id="listed_` +
-            num +
-            `"` +
-            `class="textlistatt">` +
-            `<div id="savedtext">` +
-            tlist[num] +
-            `</div>` +
-            `<button onclick="editItem(${num})"` +
-            ` class="editbutton"><img src="assets/edit.svg" alt=""></button>` +
-            `<button onclick="removeItem(${num})"` +
-            ` class="delbutton"><img src="assets/trash.svg" alt=""></button>` +
-            `</div>`;
-            }
-      
-      // edit save
-      function esave(num) {
-        let sei = document.getElementById("editlist_" + num);
-        sei.remove();
-        tlist.splice[0, num];
-        console.log(tlist)
-
-        document.getElementById("textlist").innerHTML +=
-            `<div id="listed_` +
-            num +
-            `"` +
-            `class="textlistatt">` +
-            `<div id="savedtext">` +
-            tlist[num] +
-            `</div>` +
-            `<button onclick="editItem(${num})"` +
-            ` class="editbutton"><img src="assets/edit.svg" alt=""></button>` +
-            `<button onclick="removeItem(${num})"` +
-            ` class="delbutton"><img src="assets/trash.svg" alt=""></button>` +
-            `</div>`;
-            }
 
       // save 버튼 작동
       savebtn.addEventListener("click", save);
