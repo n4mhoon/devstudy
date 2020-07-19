@@ -66,34 +66,36 @@
 
           //텍스트 넣기
           document.getElementById("textlist").innerHTML +=
+            `<div id="l` +
+            (tlist.length) +
+            `">` +
             `<div id="listed_` +
             (tlist.length) +
             `"` +
             `class="textlistatt">` +
             `<div id="savedtext">` +
-            tlist[tlist.length - 1] +
+            tlist[tlist.length-1] +
             `</div>` +
             `<button onclick="editItem(${tlist.length})"` +
             ` class="editbutton"><img src="assets/edit.svg" alt=""></button>` +
             `<button onclick="removeItem(${tlist.length})"` +
             ` class="delbutton"><img src="assets/trash.svg" alt=""></button>` +
-            `</div>`;
+            `</div>` + `</div>`;
         }
       }
 
       //delete 버튼 작동
       function removeItem(num) {
         let ri = document.getElementById("listed_" + num);
-        ri.remove();
-          tlist.splice(0, num);
-        
+        ri.parentElement.remove();
+        tlist.splice(num-1, 1); //solve this... errororororor
       }
 
       //edit 버튼 작동
       function editItem(num) {
-        let ei = document.getElementById("savedtext" + num);
+        let ei = document.getElementById("listed_" + num);
         ei.remove();
-        document.getElementById("textlist").innerHTML +=
+        document.getElementById("l"+(num)).innerHTML =
             `<div id="editlist_` +
             num +
             `" class="editlistatt" />` +
@@ -102,7 +104,7 @@
             `"` +
             `class="editinputatt"` +
             `value ="` +
-            tlist[num] +
+            tlist[num-1] +
             `" />` +
             `<button onclick="cancel(${num})"` +
             ` class="ebutton"><img src="assets/exit.svg" alt=""></button>` +
@@ -116,13 +118,13 @@
         let rei = document.getElementById("editlist_" + num);
         rei.remove();
 
-        document.getElementById("textlist").innerHTML +=
+        document.getElementById("l"+(num)).innerHTML +=
             `<div id="listed_` +
             num +
             `"` +
             `class="textlistatt">` +
             `<div id="savedtext">` +
-            tlist[num] +
+            tlist[num-1] +
             `</div>` +
             `<button onclick="editItem(${num})"` +
             ` class="editbutton"><img src="assets/edit.svg" alt=""></button>` +
@@ -133,18 +135,19 @@
       
       // edit save
       function esave(num) {
+        let et = document.getElementById("editedtext_" + num);
         let sei = document.getElementById("editlist_" + num);
+        tlist.splice(num-1, 1, et.value);
         sei.remove();
-        tlist.splice[0, num];
-        console.log(tlist)
+        console.log(tlist);
 
-        document.getElementById("textlist").innerHTML +=
+        document.getElementById("l"+(num)).innerHTML +=
             `<div id="listed_` +
             num +
             `"` +
             `class="textlistatt">` +
             `<div id="savedtext">` +
-            tlist[num] +
+            et.value +
             `</div>` +
             `<button onclick="editItem(${num})"` +
             ` class="editbutton"><img src="assets/edit.svg" alt=""></button>` +
