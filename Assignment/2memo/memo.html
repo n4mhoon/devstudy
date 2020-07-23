@@ -24,14 +24,17 @@
     <link rel="manifest" href="assets/favicon/site.webmanifest" />
     <link rel="stylesheet" href="memostyle.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900
+      &family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
   </head>
 
   <body>
     <div>
-      <h1 id="header">메모장</h1>
+      <h1 id="header">
+        메모장
+      </h1>
     </div>
 
     <div class="container">
@@ -73,9 +76,9 @@
                 <div id="savedtext">
                 ${tlist[tlistorder]}
                 </div>
-              <button onclick="editItem(${tlistorder})" class="editbutton"> <img src="assets/edit.svg" alt=""></button>
-              <button onclick="removeItem(${tlistorder})" class="delbutton"><img src="assets/trash.svg" alt=""></button>
-              </div>
+                <button onclick="editItem(${tlistorder})" class="editbutton"> <img src="assets/edit.svg" alt=""></button>
+                <button onclick="removeItem(${tlistorder})" class="delbutton"><img src="assets/trash.svg" alt=""></button>
+                </div>
             </div>`;
         }
       }
@@ -92,9 +95,9 @@
         ei.remove();
         document.getElementById("l" + num).innerHTML = `
           <div id="editlist_${num}" class="editlistatt">
-          <input id="editedtext_${num}" class="editinputatt" value="${tlist[num]}"/>
-          <button onclick="cancel(${num})" class="ebutton"><img src="assets/exit.svg" alt=""></button>
-          <button onclick="esave(${num})" class="ebutton"><img src="assets/check.svg" alt=""></button>
+            <input id="editedtext_${num}" class="editinputatt" value="${tlist[num]}"/>
+            <button onclick="cancel(${num})" class="ebutton"><img src="assets/exit.svg" alt=""></button>
+            <button onclick="esave(${num})" class="ebutton"><img src="assets/check.svg" alt=""></button>
           </div>`;
       }
 
@@ -105,9 +108,9 @@
 
         document.getElementById("l" + num).innerHTML += `
         <div id="listed_${num}" class="textlistatt">
-        <div id="savedtext"> ${tlist[num]} </div>
-        <button onclick="editItem(${num})" class="editbutton"><img src="assets/edit.svg" alt=""></button>
-        <button onclick="removeItem(${num})" class="delbutton"><img src="assets/trash.svg" alt=""></button>
+          <div id="savedtext"> ${tlist[num]} </div>
+          <button onclick="editItem(${num})" class="editbutton"><img src="assets/edit.svg" alt=""></button>
+          <button onclick="removeItem(${num})" class="delbutton"><img src="assets/trash.svg" alt=""></button>
         </div>`;
       }
 
@@ -122,9 +125,9 @@
           sei.remove();
           document.getElementById("l" + num).innerHTML += `
           <div id="listed_${num}" class="textlistatt">
-          <div id="savedtext"> ${et.value} </div>
-          <button onclick="editItem(${num})" class="editbutton"><img src="assets/edit.svg" alt=""></button>
-          <button onclick="removeItem(${num})" class="delbutton"><img src="assets/trash.svg" alt=""></button>
+            <div id="savedtext"> ${et.value} </div>
+            <button onclick="editItem(${num})" class="editbutton"><img src="assets/edit.svg" alt=""></button>
+            <button onclick="removeItem(${num})" class="delbutton"><img src="assets/trash.svg" alt=""></button>
           </div>`;
         }
       }
