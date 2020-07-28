@@ -8,6 +8,10 @@ body {
   background-color: #f5f7fb;
   overflow: hidden;
 }
+button {
+  padding: 0;
+}
+
 #header {
   font-size: 22px;
   font-weight: 700;
@@ -106,8 +110,6 @@ body {
   border: none;
   outline: none;
   border-radius: 4px;
-  height: 24px;
-  width: 24px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -125,8 +127,6 @@ body {
   border: none;
   outline: none;
   border-radius: 4px;
-  height: 24px;
-  width: 24px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -144,8 +144,6 @@ body {
   border: none;
   outline: none;
   border-radius: 4px;
-  height: 24px;
-  width: 24px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
